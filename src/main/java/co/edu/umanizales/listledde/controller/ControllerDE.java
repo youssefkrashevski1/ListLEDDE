@@ -7,8 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import java.time.LocalTime;
 import java.util.Collections;
 
 @RestController
@@ -28,7 +26,6 @@ public class ControllerDE {
     @GetMapping("/leds")
     public ResponseEntity<ResponseDTO> listLeds() {
          listDEService.getLed().getAll();
-        ErrorDTO leds = null;
         return new ResponseEntity<>(new ResponseDTO(
                 200, "Lista de leds obtenida exitosamente",
                 Collections.singletonList(null)), HttpStatus.OK);
@@ -47,13 +44,12 @@ public class ControllerDE {
     public ResponseEntity<ResponseDTO> getreboot() {
          listDEService.getLed().getreboot();
         return new ResponseEntity<>(new ResponseDTO(
-                200,"Los LEDs han sido reiniciados exitosamente",
+                200, "Los LEDs han sido reiniciados exitosamente",
                 null), HttpStatus.OK);
     }
     @GetMapping("/led_middle")
     public ResponseEntity<ResponseDTO> getMiddle() {
          listDEService.getLed().findMiddle();
-        boolean middle = false;
         return new ResponseEntity<>(new ResponseDTO(
                 200, "El nodo central de la lista de LEDs ha sido encontrado",
                 null), HttpStatus.OK);
@@ -61,7 +57,6 @@ public class ControllerDE {
     @GetMapping("/turn_on_middle_led")
     public ResponseEntity<ResponseDTO> turnOnMiddleLed() {
         listDEService.getLed().findMiddle();
-        boolean middle = false;
         return new ResponseEntity<>(new ResponseDTO(
                 200, "Se ha encendido el LED de la mitad de la lista",
                 null), HttpStatus.OK);

@@ -67,7 +67,10 @@ public class ListDE {
         head.setPrevious(newNode);
         head = newNode;
     }
-
+//Iniciar un bucle mientras currentNode no sea null:
+//Obtener los datos del nodo actual (currentNode.getData()).
+// Llamar al método reboot() en los datos obtenidos en el paso anterior.
+// Actualizar currentNode al siguiente nodo (currentNode = currentNode.getNext()).
     public void getreboot() {
         NodeDE currentNode = null;
         while (currentNode != null) {
@@ -93,6 +96,10 @@ public class ListDE {
         }
         return slow;
     }
+    //Verificar si middleNode no es null (es decir, si se encontró el nodo del medio).
+    //Si middleNode no es null:
+    //Obtener los datos del nodo del medio (middleNode.getData()).
+    //Llamar al método turnOn() en los datos obtenidos en el paso anterior para encender el LED.
     public void turnOnMiddleLed() {
         NodeDE middleNode = findMiddle();
         if (middleNode != null) {
@@ -109,7 +116,10 @@ public class ListDE {
 
     public void waitOneSecond() {
     }
-
+//Establecer current como false.
+//Dentro de un bloque de código, establecer turnedOff como true.
+//Intentar suspender la ejecución del hilo actual durante 1000 milisegundos utilizando Thread.sleep(1000).
+//Capturar y manejar cualquier excepción InterruptedException que se produzca durante el tiempo de espera.
     public void  turnOffLeds() {
         boolean current = false;
         {

@@ -38,10 +38,6 @@ public class Led {
         return state;
     }
 
-    public void setState(boolean state) {
-        this.state = state;
-    }
-
     public LocalDateTime getOn() {
         return on;
     }
